@@ -1,3 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --bg-primary: #060B12;
+  --bg-panel: #090F18;
+  --accent: #00C2FF;
+  --green: #00D97A;
+  --red: #FF3A55;
+  --gold: #FFB300;
+  --text-primary: #E8EDF2;
+  --text-secondary: #7A8999;
+  --border: #1A2535;
+}
+
+* { font-family: 'IBM Plex Mono', monospace; }
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+/* Custom classes */
+.panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.verdict-strong-buy { color: #00D97A; }
+.verdict-buy { color: #4CAF50; }
+.verdict-hold { color: #FFB300; }
+.verdict-sell { color: #FF6B35; }
+.verdict-strong-sell { color: #FF3A55; }
+
+.score-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  border: 1px solid;
+}
+
+.loading-pulse {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
